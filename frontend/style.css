@@ -1,0 +1,114 @@
+/* --- Global Reset --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* --- Auth/Login Section --- */
+#auth-container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 350px;
+    text-align: center;
+}
+
+#auth-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+#auth-btn {
+    width: 100%;
+    padding: 12px;
+    background: #1877f2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#toggle-auth { color: #1877f2; cursor: pointer; font-weight: 600; }
+
+/* --- Chat Section (The Sticky Bottom Logic) --- */
+#chat-container {
+    background: white;
+    width: 450px;
+    height: 600px; /* Forces the window to stay this size */
+    border-radius: 12px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+    
+    display: flex;
+    flex-direction: column; /* Stacks header, messages, and form */
+    overflow: hidden; /* Prevents the whole container from scrolling */
+}
+
+#welcome-user {
+    background: #1877f2;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* This is the magic part: it fills the space and scrolls */
+#messages {
+    flex: 1; 
+    padding: 20px;
+    overflow-y: auto; /* Only this section scrolls */
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Message Bubble Styling */
+.msg {
+    padding: 10px 15px;
+    background: #e4e6eb;
+    border-radius: 18px;
+    max-width: 80%;
+    width: fit-content;
+}
+
+/* The Sticky Text Bar at the Bottom */
+#chat-form {
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid #dddfe2;
+    background: white;
+}
+
+#msg-input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #dddfe2;
+    border-radius: 20px;
+    outline: none;
+    background: #f0f2f5;
+}
+
+#chat-form button {
+    padding: 0 20px;
+    background: #1877f2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
